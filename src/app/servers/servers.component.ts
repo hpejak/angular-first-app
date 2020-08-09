@@ -3,15 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  // template: `
-  //   <app-server></app-server>
-  //   <app-server></app-server>
-  //   <app-server></app-server>`,
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
 
   allowNewServer = false;
+  serverCreationStatus = 'No server was created!';
+  serverName = 'Server_1';
 
   constructor() {
 
@@ -24,4 +22,12 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onServerCreate(): void {
+    this.serverCreationStatus = 'Server was created!';
+  }
+
+  onUpdateServerName(event: Event): void {
+
+    this.serverName = (event.target as HTMLInputElement).value;
+  }
 }
