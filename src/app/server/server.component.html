@@ -5,6 +5,6 @@
   <title>Title</title>
 </head>
 <body>
-<p>Server {{ serverID }} is {{ getServerStatus() }}</p>
+<p [ngStyle]="{backgroundColor: getColor()}">Server {{ serverID }} is {{ getServerStatus() }}</p>
 </body>
 </html>
